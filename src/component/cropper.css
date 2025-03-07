@@ -1,0 +1,263 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+.cropper-container {
+    width: 80%;
+    height: 80%;
+    top : 60px;
+    left: 179px;
+    box-shadow: 0px -2px 82.2px 0px #000000BF;
+    border-radius: 10px;
+    position:absolute;
+    background-color:#37393f;
+    padding : 24px
+}
+
+.cropper-header {
+    height: 10%;
+}
+
+.heading {
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+}
+
+.video-container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.video-section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap : 5px
+}
+
+.video-content {
+    width: 100%;
+    height: 307px;
+    border-radius: 6px;
+    position: relative;
+}
+
+#wrapper-video {
+    width: 100%;
+    height: 307px;
+}
+
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    display: none;
+    opacity: 0.7;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    cursor: all-scroll;
+    border-top: none;
+    /* background-color: white; */
+    /* opacity: 0.7; */
+}
+
+
+#overlay div {
+    border: 1.25px dashed rgb(233, 228, 228);
+    border-bottom: none;
+}
+
+
+.play-slider {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #45474E;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px 0;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #FFFF;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.currTime-elapseTime {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.volume-container {
+    width: 20%;
+    display: flex;
+    gap: 10px
+}
+
+.playbackspeed,.aspect-ratio {
+    color: #FFFFFF !important;
+    border: 1px solid #45474E;
+    padding: 7px 10px;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.video-action-item {
+    display: flex;
+    gap: 5px;
+}
+
+.preview-section {
+    width: 60%;
+    text-align: center;
+}
+
+.preview-header {
+    font-weight: 700;
+    font-size: 12px;
+    color: #FFFFFF80
+}
+
+.preview-message {
+    width: 178px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cropper-action-items {
+    border-top: 1px solid #494C55;
+    width: auto;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.cropper-action-items-button {
+    display: flex;
+    gap: 10px;
+}
+
+
+.cropper-button {
+    padding: 9px 10px !important;
+    background-color: #7C36D6 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    height: 36px !important;
+    width: 137px !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    text-transform: capitalize !important;
+    width: auto !important;
+
+}
+
+
+
+
+.cancel-button {
+    height: 36px !important;
+    background-color: #45474E !important;
+    color: white !important;
+    padding: 9px 20px !important;
+    border-radius: 10px !important;
+    text-transform: capitalize !important;
+}
+
+
+
+
+
+
+
+.preview-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.MuiSlider-rail {
+    background-color:#45474E !important;
+}
+.MuiSlider-track {
+    background-color: white !important;
+}
+
+.MuiSlider-thumb {
+    color: white !important;
+    font-size: 10px !important;
+    width: 15px !important;
+    height: 15px !important;
+}
+
+#video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+
+
+.MuiFormControl-root {
+    margin : 0 !important;
+    padding: 7px 10px !important;
+    height: 30px !important;
+}
+
+#canvas {
+    display: none;
+}
+
+
+.MuiSvgIcon-root {
+    color: white !important;
+
+}
+
