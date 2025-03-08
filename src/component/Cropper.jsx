@@ -152,10 +152,10 @@ const Cropper = () => {
     const handlePlay = () => {
         if (videoRef.current.paused) {
             videoRef.current.play()
-            document.getElementById("canvas").style.display = "grid"
-            document.querySelector(".preview-message").style.display = "none"
             setPlayStatus("play")
             if (showCropper) {
+                document.getElementById("canvas").style.display = "grid"
+                document.querySelector(".preview-message").style.display = "none"
                 showCroppedPreview()
             }
         }
@@ -198,18 +198,18 @@ const Cropper = () => {
     }
 
     const handleRemoveCropper = () => {
-        setShowCropper(false)
-        const overlay = document.getElementById("overlay")
-        overlay.style.display = "none"
-        const canvasDiv = document.getElementById("canvas")
-        canvasDiv.style.display = "none"
-
-        document.querySelector(".preview-message").style.display = "block"
-
-        const canvas = canvasRef.current
-        if (canvas) {
-            const ctx = canvas.getContext("2d")
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
+        if (showCropper) {
+            setShowCropper(false)
+            const overlay = document.getElementById("overlay")
+            overlay.style.display = "none"
+            const canvasDiv = document.getElementById("canvas")
+            canvasDiv.style.display = "none"
+            document.querySelector(".preview-message").style.display = "block"
+            const canvas = canvasRef.current
+            if (canvas) {
+                const ctx = canvas.getContext("2d")
+                ctx.clearRect(0, 0, canvas.width, canvas.height)
+            }
         }
     }
 
@@ -301,15 +301,16 @@ const Cropper = () => {
     }
 
     const handleCancel = () => {
+        const wrapper = document.getElementById("wrapper-video")
         setPlaybackSpeed(1);
         setPlayStatus(null);
         setCurrentTime(0);
-        setDuration(0);
+        setDuration(videoRef.current.duration);
         setAspectRatio(1.77);
         setCropBox({ x: 0, y: 0, width: 0, height: 0 });
         setShowCropper(false);
         setRecordedData([])
-
+        updateCropBox(wrapper.offsetWidth, wrapper.offsetHeight, 1.77)
         if (videoRef.current) {
             videoRef.current.pause();
             videoRef.current.currentTime = 0;
